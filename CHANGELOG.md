@@ -6,7 +6,7 @@ BUG FIXES
 * auto-sequencing transactions correctly
 * query sequence via account store
 
-## 0.18.0 
+## 0.18.0
 
 *TBD*
 
@@ -17,7 +17,7 @@ BREAKING CHANGES
 * `gaiacli query candidate` takes and argument instead of using the `--address-candidate` flag
 * Staking refactor
   * store names more understandable
-  * removed temporary ToKick store 
+  * removed temporary ToKick store
   * removed distinction between candidates and validators
     * everything is now a validator
     * only validators with a status == bonded are actively validating/receiving rewards
@@ -32,6 +32,11 @@ FEATURES
   * Modules can include their own gas costs for execution of particular message types
 * Seperation of fee distribution to a new module
 * Creation of a validator/delegation generics in `/types`
+
+BUG FIXES
+
+* Auto-sequencing now works correctly
+* staking delegator shares exchange rate now relative to equivalent-bonded-tokens the validator has instead of bonded tokens
 
 ## 0.17.2
 
@@ -75,14 +80,14 @@ BUG FIXES
 BREAKING CHANGES
 
 * Move module REST/CLI packages to x/[module]/client/rest and x/[module]/client/cli
-* Gaia simple-staking bond and unbond functions replaced 
+* Gaia simple-staking bond and unbond functions replaced
 * [stake] Delegator bonds now store the height at which they were updated
 * All module keepers now require a codespace, see basecoin or democoin for usage
-* Many changes to names throughout 
-  * Type as a prefix naming convention applied (ex. BondMsg -> MsgBond) 
+* Many changes to names throughout
+  * Type as a prefix naming convention applied (ex. BondMsg -> MsgBond)
   * Removed redundancy in names (ex. stake.StakeKeeper -> stake.Keeper)
 * Removed SealedAccountMapper
-* gaiad init now requires use of `--name` flag 
+* gaiad init now requires use of `--name` flag
 * Removed Get from Msg interface
 * types/rational now extends big.Rat
 
@@ -93,11 +98,11 @@ FEATURES:
 * Repo is now lint compliant / GoMetaLinter with tendermint-lint integrated into CI
 * Better key output, pubkey go-amino hex bytes now output by default
 * gaiad init overhaul
-  * Create genesis transactions with `gaiad init gen-tx` 
+  * Create genesis transactions with `gaiad init gen-tx`
   * New genesis account keys are automatically added to the client keybase (introduce `--client-home` flag)
   * Initialize with genesis txs using `--gen-txs` flag
 * Context now has access to the application-configured logger
-* Add (non-proof) subspace query helper functions 
+* Add (non-proof) subspace query helper functions
 * Add more staking query functions: candidates, delegator-bonds
 
 BUG FIXES
@@ -112,7 +117,7 @@ IMPROVEMENTS:
 ## 0.15.0 (April 29, 2018)
 
 NOTE: v0.15.0 is a large breaking change that updates the encoding scheme to use
-[Amino](github.com/tendermint/go-amino). 
+[Amino](github.com/tendermint/go-amino).
 
 For details on how this changes encoding for public keys and addresses,
 see the [docs](https://github.com/tendermint/tendermint/blob/v0.19.1/docs/specification/new-spec/encoding.md#public-key-cryptography).
@@ -158,7 +163,7 @@ FEATURES:
 BUG FIXES
 
 * [client] Reuse Tendermint RPC client to avoid excessive open files
-* [client] Fix setting log level 
+* [client] Fix setting log level
 * [basecoin] Sort coins in genesis
 
 ## 0.13.1 (April 3, 2018)
@@ -231,7 +236,7 @@ FEATURES
 IMPROVEMENTS
 
 * Lots more tests!
-* [client/builder] Helpers for forming and signing transactions 
+* [client/builder] Helpers for forming and signing transactions
 * [types] sdk.Address
 * [specs] Staking
 
@@ -296,7 +301,7 @@ BREAKING CHANGES
 
 * Massive refactor. Basecoin works. Still needs <3
 
-## 0.8.1 
+## 0.8.1
 
 * Updates for dependencies
 
@@ -554,6 +559,3 @@ BUG FIXES:
 ##### September 22, 2016
 
 - Basecoin compiles again
-
-
-
