@@ -103,7 +103,7 @@ func MakeCodec() *wire.Codec {
 
 // Custom logic for basecoin initialization
 func (app *BasecoinApp) initChainer(ctx sdk.Context, req abci.RequestInitChain) abci.ResponseInitChain {
-	stateJSON := req.AppStateBytes
+	stateJSON := req.GenesisBytes
 
 	genesisState := new(types.GenesisState)
 	err := app.cdc.UnmarshalJSON(stateJSON, genesisState)
